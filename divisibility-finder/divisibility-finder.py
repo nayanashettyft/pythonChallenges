@@ -13,8 +13,19 @@ class ValidationProcessing:
 			return False
 
 class DivisionProcessing:
-    def __init__(self):
-        pass
+	def __init__(self):
+		pass
+
+	def checkDivisibleByThree(self, number):
+		while number > 9:
+			print("{} greater than 9".format(number))
+			digit_list = list(str(number))
+			number = sum([int(d) for d in str(number)])
+			print("Total number is {}".format(number))
+		if number in (3,6,9):
+			return True
+		else:
+			return False
 
 
 def main():
@@ -26,6 +37,10 @@ def main():
 		print("Number is not positive")
 		exit()
 	dp = DivisionProcessing()
+	if dp.checkDivisibleByThree(vp.number):
+		print("Divisible by three")
+	else:
+		print("Not Divisible by three")
 
 
 #  This is main
