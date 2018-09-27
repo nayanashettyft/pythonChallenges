@@ -38,9 +38,9 @@ def main():
 		exit()
 	dp = DivisionProcessing()
 	if dp.checkDivisibleByThree(vp.number):
-		print("Divisible by three")
+		print("Divisible by 3")
 	else:
-		print("Not Divisible by three")
+		print("Not Divisible by 3")
 
 
 #  This is main
