@@ -41,4 +41,9 @@ import argparse
     parser.add_argument('--year', required=True, type=int, help="--year YEAR")
     args = parser.parse_args()
 ```
+- Separate out the actual functionality needed from any helper that the program might need. 
+```
+Example: create separate classes for InputValidator and LeapYearFinder
+```
+- Think of modularizing your code with the use of functions when there are more than 3-4lines of code
 
