@@ -26,7 +26,7 @@ Make sure you are running python3
 * input = ""
 
 ### Our Learnings:
-- Use main() to start the function which gives us the ability to run modules in the code without actually running code in main()
+- Use main() to start the function which gives us the ability to run modules in the code without actually running code in main() and also helps anyone wanting to use the code 
 ```
 def main():
 	code code code
@@ -41,9 +41,10 @@ import argparse
     parser.add_argument('--year', required=True, type=int, help="--year YEAR")
     args = parser.parse_args()
 ```
-- Separate out the actual functionality needed from any helper that the program might need. 
+- Always try to separate the actual function that your programme needs to perform from any helper you need
 ```
-Example: create separate classes for InputValidator and LeapYearFinder
+In this case, actual function is finding a leap year and hence LeapyearFinder should be a class and the InputValidator should be a separate class so we can convert helpers like InputValidator into libraries which allows us to reuse this logic for any other programme if needed
 ```
-- Think of modularizing your code with the use of functions when there are more than 3-4lines of code
+- Use functions so your code is more modular. And anytime you are writing a function more than 3 lines of code think if the logic can be broken down into smaller chunks.
+
 
