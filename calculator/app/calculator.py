@@ -1,13 +1,14 @@
 class Calculator(object):
 
     def validate_input(self, x, y):
-        number_types = (int, long, float, complex)
+        number_types = (int, float)
         return isinstance(x, number_types) and isinstance(y, number_types)
 
     def add(self, x, y):
     # validate x and y are numbers
     # add x and y and return the result to the user
-        pass
+        if self.validate_input(x, y): return x + y
+        else: raise ValueError
 
     def subtract(self, x, y):
     # validate x and y are numbers
