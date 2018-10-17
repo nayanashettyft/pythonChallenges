@@ -6,6 +6,7 @@ class TddInPythonAttempt(unittest.TestCase):
 	def setUp(self):
 		self.calc = Calculator()
 
+	#Test validate_input function
 	def test_calculator_validate_input_both_ints_is_1(self):
 		result = self.calc.validate_input(1,2)
 		self.assertEqual(1, result)
@@ -31,6 +32,7 @@ class TddInPythonAttempt(unittest.TestCase):
 		result = self.calc.validate_input(-2, -4)
 		self.assertEqual(1, result)
 
+	#Test divide function
 	def test_calculator_divide_10_by_5_returns_2(self):
 		result = self.calc.divide(10,5)
 		self.assertEqual(2, result)
@@ -46,6 +48,10 @@ class TddInPythonAttempt(unittest.TestCase):
 	def test_calculator_divide_10_by_3_returns_3_33(self):
 		result = self.calc.divide(10,3)
 		self.assertEqual(3.33, result)
+
+	def test_calculator_divide_minus_10_by_3_returns_minus_3_33(self):
+		result = self.calc.divide(-10,3)
+		self.assertEqual(-3.33, result)
 
 	def test_calculator_divide_returns_error_message_if_both_args_not_numbers(self):
 		self.assertRaises(ValueError, self.calc.divide, 'two', 'three')
