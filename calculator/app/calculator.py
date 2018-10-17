@@ -18,7 +18,8 @@ class Calculator(object):
     def divide(self, x, y):
     # validate x and y are numbers
     # divide x by y and return the quotient to the user
-        pass
+        if self.validate_input(x, y): return round((x / y) ,2)
+        else: raise ValueError
 
     def multiply(self, x, y):
     # validate x and y are numbers
