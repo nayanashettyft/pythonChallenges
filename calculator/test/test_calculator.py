@@ -64,5 +64,5 @@ class TddInPythonAttempt(unittest.TestCase):
 
 	@patch('app.calculator.Calculator.add', return_value=9)
 	def test_calculator_add_method_mock_result(self,add):
-		result = add(2,2)
+		result = add("two",2)
 		self.assertEqual(result, 9)
