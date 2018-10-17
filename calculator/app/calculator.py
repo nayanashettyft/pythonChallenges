@@ -1,3 +1,5 @@
+import time
+
 class Calculator(object):
 
     def validate_input(self, x, y):
@@ -7,7 +9,9 @@ class Calculator(object):
     def add(self, x, y):
     # validate x and y are numbers
     # add x and y and return the result to the user
-        if self.validate_input(x, y): return x + y
+        if self.validate_input(x, y): 
+            time.sleep(10) # long running process
+            return x + y
         else: raise ValueError
 
     def subtract(self, x, y):

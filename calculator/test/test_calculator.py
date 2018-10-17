@@ -1,5 +1,6 @@
 import unittest
 from app.calculator import Calculator
+from unittest.mock import patch
 
 class TddInPythonAttempt(unittest.TestCase):
 
@@ -56,6 +57,12 @@ class TddInPythonAttempt(unittest.TestCase):
 	def test_calculator_divide_returns_error_message_if_both_args_not_numbers(self):
 		self.assertRaises(ValueError, self.calc.divide, 'two', 'three')
 
+	#Test add function
 	def test_calculator_add_method_returns_correct_result(self):
 		result = self.calc.add(2,2)
 		self.assertEqual(4, result)
+
+	@patch('app.calculator.Calculator.add', return_value=9)
+	def test_calculator_add_method_mock_result(self,add):
+		result = add(2,2)
+		self.assertEqual(result, 9)
