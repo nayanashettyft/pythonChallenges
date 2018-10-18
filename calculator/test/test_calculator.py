@@ -1,6 +1,6 @@
 import unittest
 from app.calculator import Calculator
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 class TddInPythonAttempt(unittest.TestCase):
 
@@ -67,7 +67,11 @@ class TddInPythonAttempt(unittest.TestCase):
 		result = add(2,2)
 		self.assertEqual(result, 9)
 
-	@patch('app.calculator.Calculator.add', return_value=9)
-	def test_calculator_add_method_mock_result_invalid_input(self,add):
-		result = add("two",2)
-		self.assertEqual(result, 9)
+	def mock_sum(a, b):
+    # mock sum function without the long running time.sleep
+		return a + b
+
+	@patch('app.calculator.Calculator.add', side_effect=mock_sum)
+	def test_add_with_side_effect(self, add):
+		self.assertEqual(add(2,3), 5)
+		self.assertEqual(add(7,3), 10)
