@@ -1,2 +1,6 @@
-# Create an app to print the current working directory and append a value in the environment variable to the path
-This challenge is to write an app to print the current working directory with tests mocking os import function.
+# This challenge is to mock python libraries
+
+Create an app and test for
+1. printing the current working directory
+2. append a value in the environment variable to the path
+
