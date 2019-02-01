@@ -10,7 +10,7 @@ class Calculator(object):
     # validate x and y are numbers
     # add x and y and return the result to the user
         if self.validate_input(x, y): 
-            time.sleep(10) # long running process
+            # time.sleep(10) # long running process
             return x + y
         else: raise ValueError
 
